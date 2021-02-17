@@ -1,0 +1,118 @@
+@name ptgamma/engines/BBD_V16_251PLUS_AIRSTART
+#ENGINE CONFIG
+ENG_Version = "2.0.68"
+#For use in some 251 powered locomotives, notably rebuilds and late production BBD HR-Series locomotives (CE636R, HR616).
+EngineType = "BBD 16-251+" #What is the name of the Prime Mover?
+
+Startup_Hi = "wam98_sounds/trains/engines/bbd251plusv16/startup_air.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "wam98_sounds/trains/engines/bbd251plusv16/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(                                  #Sounds used for each Notch
+    "wam98_sounds/trains/engines/bbd251plusv16/idle.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/idle.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/notch2.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/notch3.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/notch4.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/notch5.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/notch6.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/notch7.wav",
+    "wam98_sounds/trains/engines/bbd251plusv16/notch8.wav"
+)
+
+TransitionPath = "wam98_sounds/trains/engines/bbd251plusv16/transitions/"
+#----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(3,  0,  0,  0,  0,  0,  0,  0)
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1 1-2  2-3  3-4  4-5  5-6  6-7  7-8 
+UpDelays = array(0,  3017,1976,1833,2429,1842,3417,3974)
+                  #8-7  7-6  6-5  5-4  4-3  3-2  2-1  1-0
+DownDelays = array(2143,1511,2861,2443,3215,1932,2921,0)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 4.5 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 4.5 #Duration for starter smoke
+
+CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "gsgtrainsounds/misc/compressors/wh_3cdc_loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/wh_3cdc_end.wav"
+
+DynamicsOn = "gsgtrainsounds/misc/alco_dynb_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/alco_dynb_end.wav"
+
+PrimeOn = "gsgtrainsounds/alco251fv16/prime_loop.wav"
+PrimeOff = "gsgtrainsounds/alco251fv16/prime_end.wav"
+
+PrimerDuration = randint(10,15)
+
+SoundDurations = table()
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/1-2a.wav",number] = 1
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/1-2b.wav",number] = 4458
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/2-3a.wav",number] = 1637
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/2-3b.wav",number] = 3657
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/3-4a.wav",number] = 1077
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/3-4b.wav",number] = 3625
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/4-5a.wav",number] = 1071
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/4-5b.wav",number] = 2930
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/5-6a.wav",number] = 2012
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/5-6b.wav",number] = 1988
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/6-7a.wav",number] = 308
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/6-7b.wav",number] = 3693
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/7-8a.wav",number] = 519
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/up/7-8b.wav",number] = 3974
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/2-1a.wav",number] = 1463
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/2-1b.wav",number] = 2921
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/3-2a.wav",number] = 1
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/3-2b.wav",number] = 3784
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/4-3a.wav",number] = 958
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/4-3b.wav",number] = 3744
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/5-4a.wav",number] = 1
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/5-4b.wav",number] = 3130
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/6-5a.wav",number] = 345
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/6-5b.wav",number] = 3655
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/7-6a.wav",number] = 1445
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/7-6b.wav",number] = 1744
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/8-7a.wav",number] = 669
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/transitions/down/8-7b.wav",number] = 3824
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/startup.wav",number] = 10151
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/startup_air.wav",number] = 8744
+SoundDurations["wam98_sounds/trains/engines/bbd251plusv16/shutdown.wav",number] = 13751

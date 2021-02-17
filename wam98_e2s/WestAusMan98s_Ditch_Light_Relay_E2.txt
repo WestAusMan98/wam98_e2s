@@ -1,0 +1,101 @@
+@name WestAusMan98's Ditch Light Relay E2
+@inputs On Horn
+@outputs Port Starboard RGB:vector
+@persist OnPeriod FlashDuration TickVolume Oscillate CanStart
+
+if(first()|duped()){
+    #V1
+    
+    #Setup Instructions
+    #1: Configure the E2 to your preference.
+    #2: Spawn this E2 around where all your other locomotive E2s are placed (electrical cabinet.etc).
+    #3: Spawn two HeadSplight E2s and put them on either the front or rear of the loco (rear ditch lights are optional, front ones are mandatory).
+    #4: Wire the "On" input to a light switch of some sort.
+    #5: Wire "Horn" to whatever your horn key is (this would most likely be on your Pod Controller).
+    #6: Wire the left side HeadSplight E2 to the "Port" output and the right side one to the "Starboard" output.
+    #7: Wire "RGB" on the HeadSplight E2s to the "RGB" output on this E2 (OPTIONAL).
+    #8: Repeat steps 2 through 7 for the rear if your loco has rear ditch lights.
+    #9: Done!
+        
+    #Config
+    OnPeriod = 0.5 #How long one light will remain on before switching to the other. Around half a second (0.5) is the norm, Wisconsin Central and KiwiRail would have 0.3 and MetroLink use 1.
+    FlashDuration = 30 #How long until the ditch lights stop oscillating. 30 seconds is the golden standard.
+    RGB = vec(255,255,200) #Color of the lights.
+    TickVolume = 1
+}
+if(!Oscillate){
+    stoptimer("flash_init")
+    stoptimer("flash_left")
+    stoptimer("flash_right")
+}
+
+if(On && !Oscillate){
+    Port = 1
+    Starboard = 1
+    CanStart = 1
+}
+
+if(Horn & ~Horn && CanStart == 1){
+    Oscillate = 1
+}
+
+if(Oscillate && CanStart == 1){
+    timer("flash_init",OnPeriod*1000)
+    timer("on",FlashDuration*1000)
+    CanStart = 0
+    if(On){
+        Port = 1
+        Starboard = 0
+    }
+}
+
+if(Horn & ~Horn && CanStart == 0){
+    stoptimer("on")
+    timer("on",FlashDuration*1000)
+}
+
+if(clk("flash_init")){
+    Port = 0
+    Starboard = 1
+    soundPlay(1,1,"gsgtrainsounds/misc/switch1.wav")
+    soundVolume(1,TickVolume)
+    timer("flash_right",OnPeriod*1000)
+}
+
+if(clk("flash_right")){
+    Port = 1
+    Starboard = 0
+    soundPlay(1,1,"gsgtrainsounds/misc/switch2.wav")
+    soundVolume(1,TickVolume)
+    timer("flash_left",OnPeriod*1000)
+}
+
+if(clk("flash_left")){
+    Port = 0
+    Starboard = 1
+    soundPlay(1,1,"gsgtrainsounds/misc/switch1.wav")
+    soundVolume(1,TickVolume)
+    timer("flash_right",OnPeriod*1000)
+}
+
+if(clk("on")){
+    if(On){
+        Port = 1
+        Starboard = 1
+    }
+    stoptimer("flash_init")
+    stoptimer("flash_left")
+    stoptimer("flash_right")
+    Oscillate = 0
+    CanStart = 1
+}
+
+if(!On){
+    stoptimer("flash_init")
+    stoptimer("flash_left")
+    stoptimer("flash_right")
+    Oscillate = 0
+    Port = 0
+    Starboard = 0
+    CanStart = 0
+}
