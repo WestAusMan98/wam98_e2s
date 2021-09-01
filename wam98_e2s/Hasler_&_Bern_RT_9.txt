@@ -1,0 +1,120 @@
+@name Hasler & Bern RT 9
+@inputs KPH
+@persist E:entity GMT Ticking
+@model models/wam98_trainparts/miscellaneous/hasler_rt9.mdl
+
+#Created by WestAusMan98 with some help from Titus Studios Media Group (cheers)
+#V1.1
+
+if(dupefinished() | duped()){reset()} 
+if(first()){
+    
+    E = entity()
+    
+    Face = 1 #0 - White, 1 - Black
+    Clock = 1 #0 - A 16, 1 - RT 9
+    GMT = 8
+   
+    function void needleValue(HoloIndex, Value){
+        
+        local Frac = -clamp(Value/150,0,1)
+        local Angle = Frac*246 + 123
+        
+        holoAng(HoloIndex,E:angles():rotateAroundAxis(E:forward(),Angle))
+    }
+}
+
+if(KPH>0.25){
+    Ticking = 1
+}elseif(KPH<0.25){
+    Ticking = 0
+}
+
+if(changed(Ticking)&Ticking){
+    soundPlay(1,0,"wam98_sounds/trains/misc/hasler_rt9_tick.wav")
+}
+if(changed(!Ticking)&!Ticking){
+    soundStop(1,0)
+}
+
+
+if(first()|dupefinished()|duped()){
+    
+    entity():setAlpha(0)
+    
+    E:propDraw(0)
+    holoCreate(0,E:pos(),vec(1),E:angles(),vec(255),"models/wam98_trainparts/miscellaneous/hasler_rt9.mdl")
+    holoParent(0,E)
+        
+    holoCreate(1)
+    holoModel(1,"models/rusty/details/hasler_needle.mdl")
+    holoPos(1,entity():toWorld(vec(2.5,0,12.28)))
+    holoMaterial(1,"models/proppertextures/acrylic")
+    holoParent(1,E)
+
+    holoCreate(2)
+    holoModel(2,"models/rusty/details/hasler_needle.mdl")
+    holoScale(2,vec(0.23))
+    holoMaterial(2,"models/proppertextures/acrylic")
+    holoParent(2,entity())
+    
+    holoCreate(3)
+    holoModel(3,"models/rusty/details/hasler_needle.mdl")
+    holoScale(3,vec(0.3))
+    holoMaterial(3,"models/proppertextures/acrylic")
+    holoParent(3,entity())
+    
+    if(Clock == 1 & Face == 0){
+    holoEntity(0):setSubMaterial(5,"models/wam98_trainparts/hasler_150kmh")
+    holoColor(1,vec(0))
+    holoAlpha(2,255)
+    holoColor(2,vec(0))
+    holoAlpha(3,255)
+    holoColor(3,vec(0))
+    }elseif(Clock == 1 & Face == 1){
+    holoEntity(0):setSubMaterial(5,"models/wam98_trainparts/hasler_150kmh_black")
+    holoColor(1,vec(255))
+    holoDisableShading(1,1)
+    holoAlpha(2,255)
+    holoColor(2,vec(255))
+    holoDisableShading(2,1)
+    holoAlpha(3,255)
+    holoColor(3,vec(255))
+    holoDisableShading(3,1)
+    }elseif(Clock == 0 & Face == 0){
+    holoEntity(0):setSubMaterial(5,"models/wam98_trainparts/hasler_150kmh")
+    holoColor(1,vec(0))
+    holoAlpha(2,0)
+    holoAlpha(3,0)
+    }elseif(Clock == 0 & Face == 1){
+    holoEntity(0):setSubMaterial(5,"models/wam98_trainparts/hasler_150kmh_black")
+    holoColor(1,vec(255))
+    holoDisableShading(1,1)
+    holoAlpha(2,0)
+    holoAlpha(3,0)
+    }
+    
+    needleValue(1,0)
+}
+timer("clk",100)
+needleValue(1,KPH)
+
+Sec = time("sec")
+Min = time("min")
+Hour = time("hour")+GMT
+HourX = cos(time("hour")*7.5)
+HourY = sin(time("hour")*7.5)
+
+if(Hour>23){
+Hour-=24
+}
+
+interval(1000)
+
+#Hour
+holoAng(2,entity():toWorld(ang(0,0,-Sec/600-Min/2-Hour*30)))
+holoPos(2,entity():toWorld(vec(2.5,-0.01,13.285)))
+
+#Minute
+holoAng(3,entity():toWorld(ang(0,0,-Min*6-Sec/10)))
+holoPos(3,entity():toWorld(vec(2.5,-0.01,13.285)))
