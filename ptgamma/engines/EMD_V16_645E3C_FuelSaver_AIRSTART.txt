@@ -1,4 +1,4 @@
-@name ptgamma/engines/EMD_V16_645E3C_FuelSaver
+@name ptgamma/engines/EMD_V16_645E3C_FuelSaver_AIRSTART
 #ENGINE CONFIG
 ENG_Version = "2.0.67"
 #For use in EMD 40 series locomotives built, overhauled or rebuilt from April 1982 onwards (F40PH-2, F40C, SD40-2). This air start version would be used in some Dash 3 rebuilds such as the CSX Lego Cab units.
