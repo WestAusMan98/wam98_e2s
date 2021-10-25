@@ -1,7 +1,7 @@
 @name ptgamma/engines/GE_7HDL16B1
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
-#For use in the General Electric AC6000CW.
+#For use in the General Electric AC6000CW. Also acceptable as a substitute for the GEVO-16 used in the Vale ES58ACi and a select few AC6000CW rebuilds.
 EngineType = "GE 7HDL-16B1" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/ge7hdl16b1/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
@@ -84,7 +84,7 @@ StartupClagDuration = 2.25 #Duration for starter smoke
 CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
 
 CompressorOn = "lazpack/misc/compressors/wabtec_3cdcla_loop.wav"
-CompressorOff = "gsgtrainsounds/misc/ge_compressor_end.wav"
+CompressorOff = "lazpack/misc/compressors/wabtec_3cdcla_end.wav"
 
 DynamicsOn = "lazpack/misc/ge_dynamics_dash8_loop.wav"
 DynamicsOff = "lazpack/misc/ge_dynamics_dash8_end.wav"
