@@ -118,8 +118,8 @@ SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/transitions/down/8-7b.w
 SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/transitions/down/idle-idle_low.wav",number] = 10190
 SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/transitions/up/idle_low-idle.wav",number] = 10450
 SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/startup_low.wav",number] = 12740
-SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/startup_low_air.wav",number] = 13090
+SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/startup_low_air.wav",number] = 33430
 SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/startup_high.wav",number] = 15190
-SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/startup_high_air.wav",number] = 15530
+SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/startup_high_air.wav",number] = 27610
 SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/shutdown_low.wav",number] = 9410
 SoundDurations["wam98_sounds/trains/engines/emd645e3cv16/shutdown_high.wav",number] = 8780
