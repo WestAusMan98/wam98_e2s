@@ -1,4 +1,4 @@
-@name ptgamma/engines/CAT_3608
+@name ptgamma/engines/CAT_3608_AIRSTART
 #ENGINE CONFIG
 ENG_Version = "2.0.67"
 #For use in rebuilt MLW M636 MNNR 71 (formerly CP 4711).
@@ -68,8 +68,8 @@ DownOverrides = array(
     ""  #1-0
 )
 
-StartupClagDelay = 8 #Time required to hold starter for engine to turn on successfully
-StartupClagDuration = 3 #Duration for starter smoke
+StartupClagDelay = 3 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 4 #Duration for starter smoke
 
 CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
 

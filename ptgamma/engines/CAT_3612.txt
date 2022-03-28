@@ -1,7 +1,7 @@
 @name ptgamma/engines/CAT_3612
 #ENGINE CONFIG
 ENG_Version = "2.0.67"
-#For use in the M-K MK5000C and MK5000AC. Also acceptable as a 3616 substitute (M-K MK6000AC)
+#For use in the M-K MK5000C and MK5000AC. Also acceptable as a 3616 substitute (M-K MK6000AC).
 EngineType = "CAT 3612" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/cat3608/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
@@ -71,10 +71,10 @@ DownOverrides = array(
 StartupClagDelay = 23 #Time required to hold starter for engine to turn on successfully
 StartupClagDuration = 3 #Duration for starter smoke
 
-CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
 
-CompressorOn = "gsgtrainsounds/misc/compressors/wh_3cdc_loop.wav"
-CompressorOff = "gsgtrainsounds/misc/compressors/wh_3cdc_end.wav"
+CompressorOn = "gsgtrainsounds/misc/compressors/wabco_3cdclat_loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/wabco_3cdclat_end.wav"
 
 DynamicsOn = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_loop.wav"
 DynamicsOff = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_end.wav"
@@ -116,5 +116,7 @@ SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/7-6b.wav",n
 SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/8-7a.wav",number] = 510
 SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/8-7b.wav",number] = 3580
 SoundDurations["wam98_sounds/trains/engines/cat3608/startup.wav",number] = 13180
+SoundDurations["wam98_sounds/trains/engines/cat3608/startup_air.wav",number] = 9090
+SoundDurations["wam98_sounds/trains/engines/cat3608/startup_air_auto.wav",number] = 24120
 SoundDurations["wam98_sounds/trains/engines/cat3608/startup_auto.wav",number] = 28200
 SoundDurations["wam98_sounds/trains/engines/cat3608/shutdown.wav",number] = 8900

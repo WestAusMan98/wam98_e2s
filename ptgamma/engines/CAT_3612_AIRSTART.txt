@@ -1,10 +1,10 @@
-@name ptgamma/engines/CAT_3608
+@name ptgamma/engines/CAT_3612_AIRSTART
 #ENGINE CONFIG
 ENG_Version = "2.0.67"
-#For use in rebuilt MLW M636 MNNR 71 (formerly CP 4711).
-EngineType = "CAT 3608" #What is the name of the Prime Mover?
+#For use in the M-K MK5000C and MK5000AC. Also acceptable as a 3616 substitute (M-K MK6000AC).
+EngineType = "CAT 3612" #What is the name of the Prime Mover?
 
-Startup_Hi = "wam98_sounds/trains/engines/cat3608/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Hi = "wam98_sounds/trains/engines/cat3608/startup_air_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
 Startup_Mode = 1 #0 for Low, 1 for High
 
@@ -68,21 +68,21 @@ DownOverrides = array(
     ""  #1-0
 )
 
-StartupClagDelay = 8 #Time required to hold starter for engine to turn on successfully
-StartupClagDuration = 3 #Duration for starter smoke
+StartupClagDelay = 18 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 4 #Duration for starter smoke
 
-CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
 
-CompressorOn = "lazpack/misc/compressors/gardner-denver_wbo_u25b/gd_wbo_loop.wav"
-CompressorOff = "lazpack/misc/compressors/gardner-denver_wbo_u25b/gd_wbo_loop.wav"
+CompressorOn = "gsgtrainsounds/misc/compressors/wabco_3cdclat_loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/wabco_3cdclat_end.wav"
 
-DynamicsOn = "lazpack/misc/dynamics_mliner_loop.wav"
-DynamicsOff = "lazpack/misc/dynamics_mliner_end.wav"
+DynamicsOn = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_loop.wav"
+DynamicsOff = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_end.wav"
 
-PrimeOn = "wam98_sounds/trains/engines/cat3608/prime_loop.wav"
-PrimeOff = "wam98_sounds/trains/engines/cat3608/prime_end.wav"
+PrimeOn = ""
+PrimeOff = ""
 
-PrimerDuration = randint(10,15)
+PrimerDuration = 0
 
 SoundDurations = table()
 SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/0-1.wav",number] = 1950
