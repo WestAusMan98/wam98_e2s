@@ -35,16 +35,16 @@ Notches = array(
 
 TransitionPath = "wam98_sounds/trains/engines/emd645e3v16/transitions/"
 #---------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
-EngineBehavior = array(1,  0,  0,  0,  0,  0,  0,  0)
+EngineBehavior = array(0,  0,  0,  0,  0,  0,  0,  0)
 #0 - A/B Notching
 #1 - Full Sweep
 #2 - Instant Change
 #3 - No Change
 #4 - Override (Full Sweep)
                 #0-1 1-2  2-3  3-4  4-5  5-6  6-7  7-8 
-UpDelays = array(385,2755,5034,4089,3801,2653,4929,2984)
+UpDelays = array(212,2755,5034,4089,3801,2653,4929,2984)
                   #8-7  7-6  6-5  5-4  4-3  3-2  2-1  1-0
-DownDelays = array(1386,1427,1319,1709,1792,4246,3042,3085)
+DownDelays = array(1386,1427,1319,1709,1792,4246,3042,2916)
 
 UpOverrides = array(
     "", #0-1
@@ -85,7 +85,8 @@ PrimeOff = "wam98_sounds/trains/engines/emd645e3v16/primer_end.wav"
 PrimerDuration = randint(10,15)
 
 SoundDurations = table()
-SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/0-1.wav",number] = 2970
+SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/0-1a.wav",number] = 170
+SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/0-1b.wav",number] = 2800
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/1-2a.wav",number] = 190
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/1-2b.wav",number] = 4510
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/2-3a.wav",number] = 330
@@ -100,7 +101,8 @@ SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/6-7a.wav"
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/6-7b.wav",number] = 5330
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/7-8a.wav",number] = 180
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/up/7-8b.wav",number] = 2980
-SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/down/1-0.wav",number] = 3080
+SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/down/1-0a.wav",number] = 160
+SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/down/1-0b.wav",number] = 2910
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/down/2-1a.wav",number] = 240
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/down/2-1b.wav",number] = 3040
 SoundDurations["wam98_sounds/trains/engines/emd645e3v16/transitions/down/3-2a.wav",number] = 670
