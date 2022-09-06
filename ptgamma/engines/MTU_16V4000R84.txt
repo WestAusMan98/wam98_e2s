@@ -1,8 +1,8 @@
-@name ptgamma/engines/CMI_QSK95
+@name ptgamma/engines/MTU_16V4000R84
 #ENGINE CONFIG
 ENG_Version = "2.0.67"
-#For use in the Siemens Charger series of passenger locomotives (SC-44, SCB-40, SC-42, ALC-42).
-EngineType = "CMI QSK95" #What is the name of the Prime Mover?
+#For use in the diesel variant of the Siemens Vectron.
+EngineType = "MTU 16V4000R84" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/mtu16v4000r84/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.

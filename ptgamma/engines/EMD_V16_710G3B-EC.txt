@@ -1,67 +1,67 @@
 @name ptgamma/engines/EMD_V16_710G3B-EC
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
-#For use in mid-production EMD 70 Series and late 1990s-early 2000s GT46 export locomotives (GP70, SD70, SD70M, SD70I, SD70MAC, GT46C, GT46MAC, NS SD70M-2).
+#For use in mid-production EMD 70 Series and late 1990s-early 2000s GT46 export locomotives (GP70, SD70, SD70M, SD70I, SD70MAC, GT46C, GT46MAC).
 EngineType = "EMD 16-710G3B-EC/ES/T1" #What is the name of the Prime Mover?
 
-Startup_Hi = "gsgtrainsounds/emd710g3bv16/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Hi = "kei/trains/engines/emd_16-710g3b/startup_low_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
 Startup_Mode = 1 #0 for Low, 1 for High
 
-Shutdown_Hi = "gsgtrainsounds/emd710g3bv16/shutdown_med.wav" #Shutdown Sound from High Idle.
-Shutdown_Lo = "gsgtrainsounds/emd710g3bv16/shutdown_low.wav" #Shutdown Sound from Low Idle.
-Shutdown_Mode = 2 #0 for Low, 1 for High, 2 for Both as the situation demands it
+Shutdown_Hi = "kei/trains/engines/emd_16-710g3b/shutdown_low.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
 
-FuelSaverMode = 2 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral. 2 allows the use of EIIS without low idle.
-FuelSaverDelay = 10 #Time, in seconds, for engine to fall into Low Idle, if used.
+FuelSaverMode = 2 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral. Mode 2 is only used for this engine and allows the use of EIIS without low idle.
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
 
 TransitionToLow = "" #Transition sound for High to Low idle, if used.
 TransitionToHigh = "" #Transition sound for Low to High idle, if used.
 Idle_Low = "" #Sound for Low Idle, if used.
 
 EIIS_Enabled = 1 #EIIS Stands for EMD's Insane Idling System. God help you if you actually have to change these.
-EIIS_HigherIdle = "gsgtrainsounds/emd710g3bv16/idle_high.wav" 
-EIIS_HighToHigher = "gsgtrainsounds/emd710g3bv16/transitions/up/1-idle_high.wav"
-EIIS_LowToHigher = "gsgtrainsounds/emd710g3bv16/transitions/up/0-idle_high.wav"
-EIIS_HigherToHigh = "gsgtrainsounds/emd710g3bv16/transitions/down/idle_high-1.wav"
-EIIS_HigherToLow = "gsgtrainsounds/emd710g3bv16/transitions/down/idle_high-0.wav"
-EIIS_HigherTo2 = "gsgtrainsounds/emd710g3bv16/transitions/up/idle_high-2.wav"
-EIIS_2ToHigher = "gsgtrainsounds/emd710g3bv16/transitions/down/2-idle_high.wav"
-EIIS_Shutdown_Higher = "gsgtrainsounds/emd710g3bv16/shutdown_high.wav"
+EIIS_HigherIdle = "kei/trains/engines/emd_16-710g3b/idle_high.wav" 
+EIIS_HighToHigher = "kei/trains/engines/emd_16-710g3b/transitions/up/idle_low-idle_high.wav"
+EIIS_LowToHigher = ""
+EIIS_HigherToHigh = "kei/trains/engines/emd_16-710g3b/transitions/down/idle_high-idle_low.wav"
+EIIS_HigherToLow = ""
+EIIS_HigherTo2 = "kei/trains/engines/emd_16-710g3b/transitions/up/idle_high-2.wav"
+EIIS_2ToHigher = "kei/trains/engines/emd_16-710g3b/transitions/down/2-idle_high.wav"
+EIIS_Shutdown_Higher = "kei/trains/engines/emd_16-710g3b/shutdown_high.wav"
 
 NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
 
 Notches = array(
-    "gsgtrainsounds/emd710g3bv16/idle.wav", #Idle
-    "gsgtrainsounds/emd710g3bv16/notch1.wav", #Notch 1
-    "gsgtrainsounds/emd710g3bv16/notch2.wav", #Notch 2
-    "gsgtrainsounds/emd710g3bv16/notch3.wav", #Notch 3
-    "gsgtrainsounds/emd710g3bv16/notch5.wav", #And so On
-    "gsgtrainsounds/emd710g3bv16/notch6.wav",
-    "gsgtrainsounds/emd710g3bv16/notch6.wav",
-    "gsgtrainsounds/emd710g3bv16/notch7.wav",
-    "gsgtrainsounds/emd710g3bv16/notch8.wav"
+    "kei/trains/engines/emd_16-710g3b/idle_low.wav", #Idle
+    "kei/trains/engines/emd_16-710g3b/notch1.wav", #Notch 1
+    "kei/trains/engines/emd_16-710g3b/notch2.wav", #Notch 2
+    "kei/trains/engines/emd_16-710g3b/notch3.wav", #Notch 3
+    "kei/trains/engines/emd_16-710g3b/notch5.wav", #And so On
+    "kei/trains/engines/emd_16-710g3b/notch6.wav",
+    "kei/trains/engines/emd_16-710g3b/notch6.wav",
+    "kei/trains/engines/emd_16-710g3b/notch7.wav",
+    "kei/trains/engines/emd_16-710g3b/notch8.wav"
 )
 
-TransitionPath = "gsgtrainsounds/emd710g3bv16/transitions/"
+TransitionPath = "kei/trains/engines/emd_16-710g3b-ec/transitions/"
 #----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
-EngineBehavior = array(0,  0,  0,  4,  4,  3,  0,  0  )
+EngineBehavior = array(0,  0,  0,  0,  0,  3,  0,  0)
 #0 - A/B Notching
 #1 - Full Sweep
 #2 - Instant Change
 #3 - No Change
 #4 - Override (Full Sweep)
                 #0-1  1-2  2-3  3-4  4-5  5-6 6-7  7-8 
-UpDelays = array(2854,4933,5599,9177,2423,0,  3143,5562)
-                  #8-7  7-6  6-5 5-4  4-3  3-2  2-1
-DownDelays = array(1294,4820,0,  7063,8885,6682,3940,3073)
+UpDelays = array(2370,4880,5359,8071,3497,0,  2482,1373)
+                  #8-7  7-6  6-5 5-4  4-3  3-2  2-1  1-0
+DownDelays = array(1871,5020,0,  4912,9547,7137,4185,3007)
 
 UpOverrides = array(
     "", #0-1
     "", #1-2
     "", #2-3
-    "wam98_sounds/trains/engines/emd710g3b-ecv16/transitions/up/3-4.wav", #3-4
-    "wam98_sounds/trains/engines/emd710g3b-ecv16/transitions/up/4-5.wav", #4-5
+    "", #3-4
+    "", #4-5
     "", #5-6
     "", #6-7
     ""  #7-8
@@ -71,71 +71,74 @@ DownOverrides = array(
     "", #8-7
     "", #7-6
     "", #6-5
-    "wam98_sounds/trains/engines/emd710g3b-ecv16/transitions/down/5-4.wav", #5-4
-    "wam98_sounds/trains/engines/emd710g3b-ecv16/transitions/down/4-3.wav", #4-3
+    "", #5-4
+    "", #4-3
     "", #3-2
     "", #2-1
     ""  #1-0
 )
 
 StartupClagDelay = 18 #Time required to hold starter for engine to turn on successfully
-StartupClagDuration = 1.5 #Duration for starter smoke
+StartupClagDuration = 1 #Duration for starter smoke
 
 CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
 
-CompressorOn = "gsgtrainsounds/misc/compressors/gd_wbo_sd50_loop.wav"
-CompressorOff = "gsgtrainsounds/misc/compressors/gd_wbo_sd50_end.wav"
+CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_end.wav"
 
-DynamicsOn = "gsgtrainsounds/misc/emd_late_dyn_loop.wav"
-DynamicsOff = "gsgtrainsounds/misc/emd_late_dyn_end.wav"
+DynamicsOn = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_loop.wav"
+DynamicsOff = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_end.wav"
 
-PrimeOn = ""
-PrimeOff = ""
+PrimeOn = "kei/trains/engines/emd_16-710g3b/primer_loop.wav"
+PrimeOff = "kei/trains/engines/emd_16-710g3b/primer_end.wav"
 
 PrimerDuration = 0
 
 SoundDurations = table()
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/0-1.wav",number] = 7770
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/0-1a.wav",number] = 800
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/0-1b.wav",number] = 6960
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/1-2a.wav",number] = 600
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/1-2b.wav",number] = 6580
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/2-3a.wav",number] = 940
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/2-3b.wav",number] = 5600
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/3-4a.wav",number] = 790
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/3-4b.wav",number] = 4610
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/4-5a.wav",number] = 960
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/4-5b.wav",number] = 5630
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/5-6a.wav",number] = 1360
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/5-6b.wav",number] = 3630
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/6-7a.wav",number] = 910
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/6-7b.wav",number] = 4340
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/7-8a.wav",number] = 1160
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/7-8b.wav",number] = 5560
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/1-0.wav",number] = 5580
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/1-0a.wav",number] = 440
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/1-0b.wav",number] = 5140
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/2-1b.wav",number] = 4360
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/3-2a.wav",number] = 300
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/3-2b.wav",number] = 7200
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/4-3a.wav",number] = 550
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/4-3b.wav",number] = 5530
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/5-4a.wav",number] = 360
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/5-4b.wav",number] = 4140
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/6-5a.wav",number] = 270
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/6-5b.wav",number] = 7360
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/7-6a.wav",number] = 280
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/7-6b.wav",number] = 5170
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/8-7a.wav",number] = 1630
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/8-7b.wav",number] = 1570
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/2-idle_high.wav",number] = 1670
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/idle_high-0.wav",number] = 9320
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/down/idle_high-1.wav",number] = 5260
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/0-idle_high.wav",number] = 8590
-SoundDurations["gsgtrainsounds/emd710g3bv16/transitions/up/1-idle_high.wav",number] = 6690
-SoundDurations["gsgtrainsounds/emd710g3bv16/startup.wav",number] = 12220
-SoundDurations["gsgtrainsounds/emd710g3bv16/startup_auto.wav",number] = 27040
-SoundDurations["gsgtrainsounds/emd710g3bv16/shutdown.wav",number] = 9900
-SoundDurations["gsgtrainsounds/emd710g3bv16/shutdown_low.wav",number] = 9900
-SoundDurations["gsgtrainsounds/emd710g3bv16/shutdown_med.wav",number] = 11920
-SoundDurations["gsgtrainsounds/emd710g3bv16/shutdown_high.wav",number] = 15650
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/0-1a.wav",number] = 1070
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/0-1b.wav",number] = 3700
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/1-2a.wav",number] = 900
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/1-2b.wav",number] = 6300
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/2-3a.wav",number] = 1400
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/2-3b.wav",number] = 7230
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/3-4a.wav",number] = 1470
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/3-4b.wav",number] = 10530
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/4-5a.wav",number] = 1270
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/4-5b.wav",number] = 4540
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/6-7a.wav",number] = 790
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/6-7b.wav",number] = 3980
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/7-8a.wav",number] = 1120
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/up/7-8b.wav",number] = 6940
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/1-0a.wav",number] = 630
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/1-0b.wav",number] = 5660
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/2-1a.wav",number] = 520
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/2-1b.wav",number] = 5330
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/3-2a.wav",number] = 800
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/3-2b.wav",number] = 8820
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/4-3a.wav",number] = 1030
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/4-3b.wav",number] = 10920
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/5-4a.wav",number] = 1010
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/5-4b.wav",number] = 6610
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/7-6a.wav",number] = 970
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/7-6b.wav",number] = 6540
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/8-7a.wav",number] = 1130
+SoundDurations["kei/trains/engines/emd_16-710g3b-ec/transitions/down/8-7b.wav",number] = 3640
+SoundDurations["kei/trains/engines/emd_16-710g3b/transitions/up/idle_low-idle_high.wav",number] = 10590
+SoundDurations["kei/trains/engines/emd_16-710g3b/transitions/up/idle_high-2.wav",number] = 1660
+SoundDurations["kei/trains/engines/emd_16-710g3b/transitions/down/2-idle_high.wav",number] = 1690
+SoundDurations["kei/trains/engines/emd_16-710g3b/transitions/down/idle_high-idle_low.wav",number] = 11430
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_low.wav",number] = 12910
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_low_air.wav",number] = 12140
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_low_auto.wav",number] = 26900
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_low_air_auto.wav",number] = 26120
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_mid.wav",number] = 17690
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_mid_air.wav",number] = 16910
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_mid_auto.wav",number] = 31670
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_mid_air_auto.wav",number] = 30890
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_high.wav",number] = 23510
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_high_air.wav",number] = 22730
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_high_auto.wav",number] = 37490
+SoundDurations["kei/trains/engines/emd_16-710g3b/startup_high_air_auto.wav",number] = 36717
+SoundDurations["kei/trains/engines/emd_16-710g3b/shutdown_low.wav",number] = 12580
+SoundDurations["kei/trains/engines/emd_16-710g3b/shutdown_mid.wav",number] = 17410
+SoundDurations["kei/trains/engines/emd_16-710g3b/shutdown_high.wav",number] = 19750
