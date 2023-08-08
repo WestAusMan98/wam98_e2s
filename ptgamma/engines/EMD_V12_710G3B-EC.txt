@@ -1,7 +1,7 @@
 @name ptgamma/engines/EMD_V12_710G3B-EC
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
-#For use in 3,000hp EMD locomotives from the late 90s-mid 2000s (British Class 66, Class 67, Class 69 (nice), IE 201 Class, EMD DE30AC/DM30AC, Westrail S Class, GT42CU-AC).
+#For use in 3,000hp EMD locomotives from the late 90s-mid 2000s (British Class 69 (nice), IE 201 Class, EMD DE30AC/DM30AC).
 EngineType = "EMD 12-710G3B-EC" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/emd710g3av12/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
@@ -86,11 +86,11 @@ CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
 CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_loop.wav"
 CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_end.wav"
 
-DynamicsOn = "gsgtrainsounds/misc/emd_dynb_sd50_loop.wav"
-DynamicsOff = "gsgtrainsounds/misc/emd_dynb_sd50_end.wav"
+DynamicsOn = "gsgtrainsounds/misc/emd_dyn_sd70_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/emd_dyn_sd70_end.wav"
 
-PrimeOn = "wam98_sounds/trains/engines/emd710g3a-t2v8/prime_loop.wav"
-PrimeOff = "wam98_sounds/trains/engines/emd710g3a-t2v8/prime_end.wav"
+PrimeOn = ""
+PrimeOff = ""
 
 PrimerDuration = 0
 

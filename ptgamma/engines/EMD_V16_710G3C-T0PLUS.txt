@@ -8,7 +8,7 @@ Startup_Hi = "wam98_sounds/trains/engines/emd710g3cv16/startup_air_auto.wav" #St
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
 Startup_Mode = 1 #0 for Low, 1 for High
 
-Shutdown_Hi = "wam98_sounds/trains/engines/emd710g3cv16/shutdown_low.wav" #Shutdown Sound from High Idle.
+Shutdown_Hi = "wam98_sounds/trains/engines/emd710g3cv16/shutdown.wav" #Shutdown Sound from High Idle.
 Shutdown_Lo = "" #Shutdown Sound from Low Idle.
 Shutdown_Mode = 2 #0 for Low, 1 for High, 2 for Both as the situation demands it
 
@@ -83,11 +83,11 @@ StartupClagDuration = 1 #Duration for starter smoke
 
 CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
 
-CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_idle.wav"
+CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_loop.wav"
 CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_end.wav"
 
-DynamicsOn = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_loop.wav"
-DynamicsOff = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_end.wav"
+DynamicsOn = "gsgtrainsounds/misc/emd_dyn_sd70_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/emd_dyn_sd70_end.wav"
 
 PrimeOn = ""
 PrimeOff = ""

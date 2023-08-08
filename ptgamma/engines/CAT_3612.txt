@@ -73,11 +73,11 @@ StartupClagDuration = 3 #Duration for starter smoke
 
 CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
 
-CompressorOn = "gsgtrainsounds/misc/compressors/wabco_3cdclat_loop.wav"
-CompressorOff = "gsgtrainsounds/misc/compressors/wabco_3cdclat_end.wav"
+CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd9043mac/loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd9043mac/end.wav"
 
-DynamicsOn = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_loop.wav"
-DynamicsOff = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_end.wav"
+DynamicsOn = "gsgtrainsounds/misc/emd_dyn_sd70_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/emd_dyn_sd70_end.wav"
 
 PrimeOn = ""
 PrimeOff = ""

@@ -1,8 +1,8 @@
 @name ptgamma/engines/EMD_V16_710G3C-EC
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
-#For use in the EMD SD9043MAC and late production 70 series locomotives (2003-2008 SD70M, SD70I, SD70MAC).
-EngineType = "EMD 16-710G3C-EC/T1" #What is the name of the Prime Mover?
+#For use in the EMD SD9043MAC and SD70ACU.
+EngineType = "EMD 16-710G3C-EC/T0+" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/emd710g3cv16/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
@@ -36,25 +36,25 @@ Notches = array(
     "wam98_sounds/trains/engines/emd710g3cv16/notch1.wav", #Notch 1
     "wam98_sounds/trains/engines/emd710g3cv16/notch2.wav", #Notch 2
     "wam98_sounds/trains/engines/emd710g3cv16/notch3.wav", #Notch 3
-    "wam98_sounds/trains/engines/emd710g3cv16/notch5.wav", #And so On
-    "wam98_sounds/trains/engines/emd710g3cv16/notch6.wav",
+    "wam98_sounds/trains/engines/emd710g3cv16/notch4.wav", #And so On
+    "wam98_sounds/trains/engines/emd710g3cv16/notch5.wav",
     "wam98_sounds/trains/engines/emd710g3cv16/notch6.wav",
     "wam98_sounds/trains/engines/emd710g3cv16/notch7.wav",
     "wam98_sounds/trains/engines/emd710g3cv16/notch8.wav"
 )
 
-TransitionPath = "wam98_sounds/trains/engines/emd710g3c-esv16/transitions/"
+TransitionPath = "wam98_sounds/trains/engines/emd710g3cv16/transitions/"
 #----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
-EngineBehavior = array(0,  0,  0,  0,  0,  3,  0,  0)
+EngineBehavior = array(0,  0,  0,  0,  0,  0,  0,  0)
 #0 - A/B Notching
 #1 - Full Sweep
 #2 - Instant Change
 #3 - No Change
 #4 - Override (Full Sweep)
                 #0-1   1-2   2-3   3-4   4-5   5-6   6-7   7-8 
-UpDelays = array(2976, 1518, 3340, 3870, 1519, 2156, 6394, 11426)
+UpDelays = array(2976, 1518, 3340, 2047, 1519, 2156, 6394, 11426)
                   #8-7   7-6   6-5   5-4   4-3   3-2   2-1   1-0
-DownDelays = array(4516, 1879, 2411, 2832, 4890, 3535, 1691, 6538)
+DownDelays = array(4516, 1879, 2411, 2832, 2058, 3535, 1691, 6538)
 
 UpOverrides = array(
     "", #0-1
@@ -86,8 +86,8 @@ CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
 CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_idle.wav"
 CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_end.wav"
 
-DynamicsOn = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_loop.wav"
-DynamicsOff = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_end.wav"
+DynamicsOn = "gsgtrainsounds/misc/emd_dyn_sd70_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/emd_dyn_sd70_end.wav"
 
 PrimeOn = ""
 PrimeOff = ""

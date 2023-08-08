@@ -8,9 +8,9 @@ Startup_Hi = "wam98_sounds/trains/engines/emd710g3c-t2v16/startup_low.wav" #Star
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
 Startup_Mode = 1 #0 for Low, 1 for High
 
-Shutdown_Hi = "wam98_sounds/trains/engines/emd710g3c-t2v16/shutdown_mid.wav" #Shutdown Sound from High Idle.
-Shutdown_Lo = "wam98_sounds/trains/engines/emd710g3c-t2v16/shutdown_low.wav" #Shutdown Sound from Low Idle.
-Shutdown_Mode = 2 #0 for Low, 1 for High, 2 for Both as the situation demands it
+Shutdown_Hi = "wam98_sounds/trains/engines/emd710g3c-t2v16/shutdown_low.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
 
 FuelSaverMode = 2 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral. Mode 2 allows the use of EIIS without low idle.
 FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
@@ -25,8 +25,8 @@ EIIS_HighToHigher = "wam98_sounds/trains/engines/emd710g3c-t2v16/transitions/up/
 EIIS_LowToHigher = ""
 EIIS_HigherToHigh = "wam98_sounds/trains/engines/emd710g3c-t2v16/transitions/down/idle_high-idle.wav"
 EIIS_HigherToLow = ""
-EIIS_HigherTo2 = "wam98_sounds/trains/engines/emd710g3c-t2v16/notch2.wav"
-EIIS_2ToHigher = "wam98_sounds/trains/engines/emd710g3c-t2v16/notch2.wav"
+EIIS_HigherTo2 = ""
+EIIS_2ToHigher = ""
 EIIS_Shutdown_Higher = "wam98_sounds/trains/engines/emd710g3c-t2v16/shutdown_high.wav"
 
 NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
@@ -86,8 +86,8 @@ CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
 CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_loop.wav"
 CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd70mac/gd_wlasc_end.wav"
 
-DynamicsOn = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_loop.wav"
-DynamicsOff = "wam98_sounds/trains/misc/emd_electrically_blown_extendedrange_dyn_end.wav"
+DynamicsOn = "gsgtrainsounds/misc/emd_dyn_sd70_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/emd_dyn_sd70_end.wav"
 
 PrimeOn = ""
 PrimeOff = ""
