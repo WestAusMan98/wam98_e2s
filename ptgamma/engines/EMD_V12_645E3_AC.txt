@@ -1,0 +1,125 @@
+@name ptgamma/engines/EMD_V12_645E3_AC
+#ENGINE CONFIG
+ENG_Version = "2.0.68"
+#For use in EMD 39 series and GT22 series locomotives fitted with a traction alternator, such as an AR10 (GP39AC, GP39-2, SD39AC, SD39-2, V/Line A Class, CIE 071 Class).
+EngineType = "EMD 12-645E3" #What is the name of the Prime Mover?
+
+Startup_Hi = "wam98_sounds/trains/engines/emd645e3v12/startup_ac_high.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "wam98_sounds/trains/engines/emd645e3v12/startup_ac_low.wav" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "wam98_sounds/trains/engines/emd645e3v12/shutdown_high.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "wam98_sounds/trains/engines/emd645e3v12/shutdown_low.wav" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "wam98_sounds/trains/engines/emd645e3v12/transitions/down/idle-idle_low.wav" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "wam98_sounds/trains/engines/emd645e3v12/transitions/up/idle_low-idle.wav" #Transition sound for Low to High idle, if used.
+Idle_Low = "wam98_sounds/trains/engines/emd645e3v12/idle_low.wav" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "wam98_sounds/trains/engines/emd645e3v12/idle.wav", #Idle
+    "wam98_sounds/trains/engines/emd645e3v12/idle.wav", #Notch 1
+    "wam98_sounds/trains/engines/emd645e3v12/notch2.wav", #Notch 2
+    "wam98_sounds/trains/engines/emd645e3v12/notch3.wav", #Notch 3
+    "wam98_sounds/trains/engines/emd645e3v12/notch4.wav", #And so On
+    "wam98_sounds/trains/engines/emd645e3v12/notch5.wav",
+    "wam98_sounds/trains/engines/emd645e3v12/notch6.wav",
+    "wam98_sounds/trains/engines/emd645e3v12/notch7.wav",
+    "wam98_sounds/trains/engines/emd645e3v12/notch8.wav"
+)
+
+TransitionPath = "wam98_sounds/trains/engines/emd645e3v12/transitions/"
+#----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(1,  0,  0,  0,  0,  0,  0,  0)
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1  1-2  2-3  3-4  4-5  5-6  6-7  7-8 
+UpDelays = array(1519,1401,2634,1589,2588,1611,3237,7624)
+                  #8-7  7-6  6-5 5-4 4-3 3-2  2-1  1-0
+DownDelays = array(1039,1165,743,854,894,1732,4678,1518)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 2.5 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 3.25 #Duration for starter smoke
+
+CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "kei/trains/compressors/g-d_wbo_gp39-2_1/loop.wav"
+CompressorOff = "kei/trains/compressors/g-d_wbo_gp39-2_1/end.wav"
+
+DynamicsOn = "gsgtrainsounds/misc/emd_dynb_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/emd_dynb_stop.wav"
+
+PrimeOn = "wam98_sounds/trains/engines/emd645e3v12/primer_loop.wav"
+PrimeOff = "wam98_sounds/trains/engines/emd645e3v12/primer_end.wav"
+
+PrimerDuration = randint(10,15)
+
+SoundDurations = table()
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/0-1.wav",number] = 1510
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/1-2a.wav",number] = 720
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/1-2b.wav",number] = 3650
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/2-3a.wav",number] = 580
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/2-3b.wav",number] = 4810
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/3-4a.wav",number] = 560
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/3-4b.wav",number] = 3910
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/4-5a.wav",number] = 310
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/4-5b.wav",number] = 3580
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/5-6a.wav",number] = 290
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/5-6b.wav",number] = 2850
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/6-7a.wav",number] = 280
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/6-7b.wav",number] = 3720
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/7-8a.wav",number] = 770
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/7-8b.wav",number] = 7620
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/1-0.wav",number] = 1510
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/2-1a.wav",number] = 880
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/2-1b.wav",number] = 4670
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/3-2a.wav",number] = 760
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/3-2b.wav",number] = 4770
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/4-3a.wav",number] = 620
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/4-3b.wav",number] = 2420
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/5-4a.wav",number] = 600
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/5-4b.wav",number] = 2290
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/6-5a.wav",number] = 580
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/6-5b.wav",number] = 2300
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/7-6a.wav",number] = 590
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/7-6b.wav",number] = 2920
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/8-7a.wav",number] = 630
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/8-7b.wav",number] = 2270
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/down/idle-idle_low.wav",number] = 5870
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/transitions/up/idle_low-idle.wav",number] = 4730
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/startup_dc_low.wav",number] = 12110
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/startup_dc_high.wav",number] = 10410
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/startup_ac_low.wav",number] = 12730
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/startup_ac_high.wav",number] = 11060
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/shutdown_low.wav",number] = 10220
+SoundDurations["wam98_sounds/trains/engines/emd645e3v12/shutdown_high.wav",number] = 11070

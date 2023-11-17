@@ -1,7 +1,7 @@
 @name ptgamma/engines/EMD_V16_710G3C-T1
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
-#For use in EMD SD70M, SD70I and SD70MAC type locomotives built from April 2003-onwards.
+#For use in EMD SD70M, SD70I and SD70MAC type locomotives built from April 2003-onwards. Also applicable for the SD70ACC rebuilds.
 EngineType = "EMD 16-710G3C-T1" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/emd710g3cv16_v2/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.

@@ -2,7 +2,7 @@
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
 #For use in the EMD SD9043MAC and SD70ACU.
-EngineType = "EMD 16-710G3C-EC/T0+" #What is the name of the Prime Mover?
+EngineType = "EMD 16-710G3C-EC" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/emd710g3cv16/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
