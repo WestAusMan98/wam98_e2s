@@ -1,0 +1,121 @@
+@name ptgamma/engines/EE_4SRKT_ShaftDriven_Compressor
+#ENGINE CONFIG
+ENG_Version = "2.0.68"
+#Turbocharged straight-four English Electric RK series engine, used in a variety of rail applications (BR Class 73, "Thumper" DEMUs, SAR 500 Class).
+EngineType = "EE 4SRKT" #What is the name of the Prime Mover?
+
+Startup_Hi = "wam98_sounds/trains/engines/ee4srkt/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "wam98_sounds/trains/engines/ee4srkt/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "wam98_sounds/trains/engines/ee4srkt/idle.wav", #Idle
+    "wam98_sounds/trains/engines/ee4srkt/notch1.wav", #Notch 1
+    "wam98_sounds/trains/engines/ee4srkt/notch2.wav", #Notch 2
+    "wam98_sounds/trains/engines/ee4srkt/notch3.wav", #Notch 3
+    "wam98_sounds/trains/engines/ee4srkt/notch4.wav", #And so On
+    "wam98_sounds/trains/engines/ee4srkt/notch5.wav",
+    "wam98_sounds/trains/engines/ee4srkt/notch6.wav",
+    "wam98_sounds/trains/engines/ee4srkt/notch7.wav",
+    "wam98_sounds/trains/engines/ee4srkt/notch7.wav"
+)
+
+TransitionPath = "wam98_sounds/trains/engines/ee4srkt/transitions/"
+#----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(0,  0,  0,  0,  0,  0,  0,  0  )
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1 1-2 2-3 3-4 4-5  5-6  6-7  7-8 
+UpDelays = array(264,243,268,866,1137,6989,5978,2663)
+                  #8-7 7-6  6-5  5-4  4-3  3-2 2-1  1-0
+DownDelays = array(155,1078,1350,1173,2931,803,1593,1770)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 3 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 1 #Duration for starter smoke
+
+CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wbo_u36b/loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wbo_u36b/end.wav"
+
+DynamicsOn = "gsgtrainsounds/misc/ge_5gya30_radiator_fan_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/ge_5gya30_radiator_fan_end.wav"
+
+PrimeOn = "wam98_sounds/trains/engines/ee4srkt/prime_loop.wav"
+PrimeOff = "wam98_sounds/trains/engines/ee4srkt/prime_end.wav"
+
+PrimerDuration = randint(15,30)
+
+SoundDurations = table()
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/0-1a.wav",number] = 0
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/0-1b.wav",number] = 3760
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/1-2a.wav",number] = 1800
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/1-2b.wav",number] = 0
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/2-3a.wav",number] = 1610
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/2-3b.wav",number] = 0
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/3-4a.wav",number] = 1170
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/3-4b.wav",number] = 5800
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/4-5a.wav",number] = 610
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/4-5b.wav",number] = 5320
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/5-6a.wav",number] = 880
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/5-6b.wav",number] = 7850
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/6-7a.wav",number] = 670
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/6-7b.wav",number] = 5970
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/7-8a.wav",number] = 100
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/7-8b.wav",number] = 2660
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/1-0a.wav",number] = 250
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/1-0b.wav",number] = 1770
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/2-1a.wav",number] = 550
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/2-1b.wav",number] = 2720
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/3-2a.wav",number] = 560
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/3-2b.wav",number] = 800
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/4-3a.wav",number] = 580
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/4-3b.wav",number] = 3160
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/5-4a.wav",number] = 540
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/5-4b.wav",number] = 1930
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/6-5a.wav",number] = 300
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/6-5b.wav",number] = 2990
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/7-6a.wav",number] = 280
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/7-6b.wav",number] = 2970
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/8-7a.wav",number] = 280
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/down/8-7b.wav",number] = 240
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/startup.wav",number] = 18950
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/shutdown.wav",number] = 17360
