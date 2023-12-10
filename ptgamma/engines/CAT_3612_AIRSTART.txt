@@ -8,7 +8,7 @@ Startup_Hi = "wam98_sounds/trains/engines/cat3608/startup_air_auto.wav" #Startup
 Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
 Startup_Mode = 1 #0 for Low, 1 for High
 
-Shutdown_Hi = "wam98_sounds/trains/engines/cat3608/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Hi = "gsgtrainsounds/cat3608i8/shutdown.wav" #Shutdown Sound from High Idle.
 Shutdown_Lo = "" #Shutdown Sound from Low Idle.
 Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
 
@@ -22,18 +22,18 @@ Idle_Low = "" #Sound for Low Idle, if used.
 NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
 
 Notches = array(
-    "wam98_sounds/trains/engines/cat3608/idle.wav", #Idle
-    "wam98_sounds/trains/engines/cat3608/notch1.wav", #Notch 1
-    "wam98_sounds/trains/engines/cat3608/notch2.wav", #Notch 2
-    "wam98_sounds/trains/engines/cat3608/notch3.wav", #Notch 3
-    "wam98_sounds/trains/engines/cat3608/notch4.wav", #And so On
-    "wam98_sounds/trains/engines/cat3608/notch5.wav",
-    "wam98_sounds/trains/engines/cat3608/notch6.wav",
-    "wam98_sounds/trains/engines/cat3608/notch7.wav",
-    "wam98_sounds/trains/engines/cat3608/notch8.wav"
+    "gsgtrainsounds/cat3608i8/idle.wav", #Idle
+    "gsgtrainsounds/cat3608i8/notch1.wav", #Notch 1
+    "gsgtrainsounds/cat3608i8/notch2.wav", #Notch 2
+    "gsgtrainsounds/cat3608i8/notch3.wav", #Notch 3
+    "gsgtrainsounds/cat3608i8/notch4.wav", #And so On
+    "gsgtrainsounds/cat3608i8/notch5.wav",
+    "gsgtrainsounds/cat3608i8/notch6.wav",
+    "gsgtrainsounds/cat3608i8/notch7.wav",
+    "gsgtrainsounds/cat3608i8/notch8.wav"
 )
 
-TransitionPath = "wam98_sounds/trains/engines/cat3608/transitions/"
+TransitionPath = "gsgtrainsounds/cat3608i8/transitions/"
 #---------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
 EngineBehavior = array(1,  0,  0,  0,  0,  0,  0,  0)
 #0 - A/B Notching
@@ -85,38 +85,38 @@ PrimeOff = ""
 PrimerDuration = 0
 
 SoundDurations = table()
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/0-1.wav",number] = 1950
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/1-2a.wav",number] = 970
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/1-2b.wav",number] = 10860
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/2-3a.wav",number] = 720
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/2-3b.wav",number] = 5850
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/3-4a.wav",number] = 650
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/3-4b.wav",number] = 6330
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/4-5a.wav",number] = 610
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/4-5b.wav",number] = 6030
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/5-6a.wav",number] = 690
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/5-6b.wav",number] = 3790
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/6-7a.wav",number] = 590
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/6-7b.wav",number] = 4330
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/7-8a.wav",number] = 650
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/up/7-8b.wav",number] = 3240
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/1-0.wav",number] = 1950
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/2-1a.wav",number] = 1190
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/2-1b.wav",number] = 10330
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/3-2a.wav",number] = 920
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/3-2b.wav",number] = 6310
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/4-3a.wav",number] = 1060
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/4-3b.wav",number] = 6280
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/5-4a.wav",number] = 1050
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/5-4b.wav",number] = 5660
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/6-5a.wav",number] = 970
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/6-5b.wav",number] = 4760
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/7-6a.wav",number] = 1100
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/7-6b.wav",number] = 3630
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/8-7a.wav",number] = 510
-SoundDurations["wam98_sounds/trains/engines/cat3608/transitions/down/8-7b.wav",number] = 3580
-SoundDurations["wam98_sounds/trains/engines/cat3608/startup.wav",number] = 13180
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/0-1.wav",number] = 1950
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/1-2a.wav",number] = 970
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/1-2b.wav",number] = 10860
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/2-3a.wav",number] = 720
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/2-3b.wav",number] = 5850
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/3-4a.wav",number] = 650
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/3-4b.wav",number] = 6330
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/4-5a.wav",number] = 610
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/4-5b.wav",number] = 6030
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/5-6a.wav",number] = 690
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/5-6b.wav",number] = 3790
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/6-7a.wav",number] = 590
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/6-7b.wav",number] = 4330
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/7-8a.wav",number] = 650
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/up/7-8b.wav",number] = 3240
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/1-0.wav",number] = 1950
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/2-1a.wav",number] = 1190
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/2-1b.wav",number] = 10330
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/3-2a.wav",number] = 920
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/3-2b.wav",number] = 6310
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/4-3a.wav",number] = 1060
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/4-3b.wav",number] = 6280
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/5-4a.wav",number] = 1050
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/5-4b.wav",number] = 5660
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/6-5a.wav",number] = 970
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/6-5b.wav",number] = 4760
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/7-6a.wav",number] = 1100
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/7-6b.wav",number] = 3630
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/8-7a.wav",number] = 510
+SoundDurations["gsgtrainsounds/cat3608i8/transitions/down/8-7b.wav",number] = 3580
+SoundDurations["gsgtrainsounds/cat3608i8/startup.wav",number] = 13180
 SoundDurations["wam98_sounds/trains/engines/cat3608/startup_air.wav",number] = 9090
 SoundDurations["wam98_sounds/trains/engines/cat3608/startup_air_auto.wav",number] = 24120
 SoundDurations["wam98_sounds/trains/engines/cat3608/startup_auto.wav",number] = 28200
-SoundDurations["wam98_sounds/trains/engines/cat3608/shutdown.wav",number] = 8900
+SoundDurations["gsgtrainsounds/cat3608i8/shutdown.wav",number] = 8900
