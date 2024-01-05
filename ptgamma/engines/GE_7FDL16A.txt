@@ -19,12 +19,11 @@ TransitionToLow = "" #Transition sound for High to Low idle, if used.
 TransitionToHigh = "" #Transition sound for Low to High idle, if used.
 Idle_Low = "" #Sound for Low Idle, if used.
 
-
 NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
 
 Notches = array(
-    "wam98_sounds/trains/engines/ge7fdl16a/idle.wav", #Idle
-    "wam98_sounds/trains/engines/ge7fdl16a/idle.wav", #Notch 1
+    "wam98_sounds/trains/engines/ge7fdl16a/idle.wav", #Idle 
+    "wam98_sounds/trains/engines/ge7fdl16a/notch1.wav", #Notch 1
     "wam98_sounds/trains/engines/ge7fdl16a/notch2.wav", #Notch 2
     "wam98_sounds/trains/engines/ge7fdl16a/notch3.wav", #Notch 3
     "wam98_sounds/trains/engines/ge7fdl16a/notch4.wav", #And so On
@@ -36,16 +35,16 @@ Notches = array(
 
 TransitionPath = "wam98_sounds/trains/engines/ge7fdl16a/transitions/"
 #----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
-EngineBehavior = array(3,  0,  0,  0,  0,  0,  0,  0)
+EngineBehavior = array(1,  0,  0,  0,  0,  0,  0,  0)
 #0 - A/B Notching
 #1 - Full Sweep
 #2 - Instant Change
 #3 - No Change
 #4 - Override (Full Sweep)
                 #0-1  1-2  2-3  3-4  4-5  5-6  6-7  7-8 
-UpDelays = array(2188,1873,4010,1004,1987,1869,1558,10845)
-                  #8-7 7-6  6-5  5-4  4-3 3-2  2-1  1-0
-DownDelays = array(664,6042,3219,1088,812,2647,4973,3113)
+UpDelays = array(1789,2259,3604,2911,2911,4386,2649,3632) 
+                  #8-7  7-6  6-5  5-4  4-3  3-2  2-1 1-0
+DownDelays = array(2438,2451,2916,2566,2714,2626,3345,1779)
 
 UpOverrides = array(
     "", #0-1
@@ -69,50 +68,52 @@ DownOverrides = array(
     ""  #1-0
 )
 
-StartupClagDelay = 3.5 #Time required to hold starter for engine to turn on successfully
-StartupClagDuration = 2.5 #Duration for starter smoke
+StartupClagDelay = 3 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 3 #Duration for starter smoke
 
 CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
 
-CompressorOn = "gsgtrainsounds/misc/compressors/gd_wbo_dash7_loop.wav"
-CompressorOff = "gsgtrainsounds/misc/compressors/gd_wbo_dash7_end.wav"
+CompressorOn = "lazpack/misc/compressors/gardner-denver_wbo_u25b/gd_wbo_loop.wav"
+CompressorOff = "lazpack/misc/compressors/gardner-denver_wbo_u25b/gd_wbo_end.wav"
 
 DynamicsOn = "lazpack/misc/dynamics_ge_universal_early_loop.wav"
 DynamicsOff = "lazpack/misc/dynamics_ge_universal_early_end.wav"
 
-PrimeOn = "gsgtrainsounds/ge7fdl16g/prime_loop.wav"
-PrimeOff = "gsgtrainsounds/ge7fdl16g/prime_end.wav"
+PrimeOn = "wam98_sounds/trains/engines/ge7fdl16a/prime_loop.wav"
+PrimeOff = "wam98_sounds/trains/engines/ge7fdl16a/prime_end.wav"
 
-PrimerDuration = randint(3,5)
+PrimerDuration = randint(5,10)
 
 SoundDurations = table()
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/1-2a.wav",number] = 470
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/1-2b.wav",number] = 7650
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/2-3a.wav",number] = 1160
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/2-3b.wav",number] = 5160
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/3-4a.wav",number] = 1090
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/3-4b.wav",number] = 2850
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/4-5a.wav",number] = 1760
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/4-5b.wav",number] = 4490
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/5-6a.wav",number] = 480
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/5-6b.wav",number] = 4060
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/6-7a.wav",number] = 2280
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/6-7b.wav",number] = 11630
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/7-8a.wav",number] = 2320
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/7-8b.wav",number] = 10840
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/2-1a.wav",number] = 1150
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/2-1b.wav",number] = 4970
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/3-2a.wav",number] = 490
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/3-2b.wav",number] = 4740
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/4-3a.wav",number] = 950
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/4-3b.wav",number] = 2990
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/5-4a.wav",number] = 320
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/5-4b.wav",number] = 2030
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/6-5a.wav",number] = 440
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/6-5b.wav",number] = 3210
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/7-6a.wav",number] = 930
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/7-6b.wav",number] = 6040
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/8-7a.wav",number] = 1250
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/8-7b.wav",number] = 1400
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/startup.wav",number] = 9530
-SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/shutdown.wav",number] = 19600
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/0-1.wav",number] = 1790
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/1-2a.wav",number] = 1080
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/1-2b.wav",number] = 6660
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/2-3a.wav",number] = 950
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/2-3b.wav",number] = 5490
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/3-4a.wav",number] = 580
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/3-4b.wav",number] = 6240
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/4-5a.wav",number] = 760
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/4-5b.wav",number] = 5250
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/5-6a.wav",number] = 900
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/5-6b.wav",number] = 5420
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/6-7a.wav",number] = 1290
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/6-7b.wav",number] = 5350
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/7-8a.wav",number] = 440
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/up/7-8b.wav",number] = 6200
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/1-0.wav",number] = 1780
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/2-1a.wav",number] = 770
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/2-1b.wav",number] = 7840
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/3-2a.wav",number] = 1010
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/3-2b.wav",number] = 4320
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/4-3a.wav",number] = 650
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/4-3b.wav",number] = 3850
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/5-4a.wav",number] = 680
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/5-4b.wav",number] = 3600
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/6-5a.wav",number] = 490
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/6-5b.wav",number] = 4110
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/7-6a.wav",number] = 640
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/7-6b.wav",number] = 3750
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/8-7a.wav",number] = 350
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/transitions/down/8-7b.wav",number] = 3830
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/startup.wav",number] = 10190
+SoundDurations["wam98_sounds/trains/engines/ge7fdl16a/shutdown.wav",number] = 10410
