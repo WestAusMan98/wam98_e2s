@@ -1,0 +1,118 @@
+@name ptgamma/engines/EE_16CSVT_AC_Electric_Compressor
+#ENGINE CONFIG
+ENG_Version = "2.0.68"
+#Turbocharged V-sixteen English Electric V type engine based on the RK series platform that's also fitted with an intercooler, used in EE's most powerful diesel locomotives (BR DP2 & Class 50, CP Série 1800).
+EngineType = "EE 16CSVT" #What is the name of the Prime Mover?
+
+Startup_Hi = "wam98_sounds/trains/engines/ee16csvt/startup_ac.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "wam98_sounds/trains/engines/ee16csvt/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "wam98_sounds/trains/engines/ee16csvt/idle.wav", #Idle
+    "wam98_sounds/trains/engines/ee16csvt/idle.wav", #Notch 1
+    "wam98_sounds/trains/engines/ee16csvt/notch2.wav", #Notch 2
+    "wam98_sounds/trains/engines/ee16csvt/notch3.wav", #Notch 3
+    "wam98_sounds/trains/engines/ee16csvt/notch4.wav", #And so On
+    "wam98_sounds/trains/engines/ee16csvt/notch5.wav",
+    "wam98_sounds/trains/engines/ee16csvt/notch5.wav",
+    "wam98_sounds/trains/engines/ee16csvt/notch7.wav",
+    "wam98_sounds/trains/engines/ee16csvt/notch7.wav"
+)
+
+TransitionPath = "wam98_sounds/trains/engines/ee16csvt/transitions/"
+#----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(3,  0,  0,  0,  0,  0,  0,  0  )
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1 1-2  2-3  3-4 4-5  5-6 6-7   7-8 
+UpDelays = array(0,  1892,2721,703,1280,255,10511,5539)
+                  #8-7 7-6 6-5  5-4   4-3  3-2  2-1   1-0
+DownDelays = array(136, 955,1162,1203,1129,5334,11722,0  )
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 4 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 2 #Duration for starter smoke
+
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "wam98_sounds/trains/compressors/br_class50_compressor_loop.wav"
+CompressorOff = "wam98_sounds/trains/compressors/br_class50_compressor_end.wav"
+
+DynamicsOn = "gsgtrainsounds/misc/ge_5gya30_radiator_fan_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/ge_5gya30_radiator_fan_end.wav"
+
+PrimeOn = "wam98_sounds/trains/engines/ee16svt/prime_loop.wav"
+PrimeOff = "wam98_sounds/trains/engines/ee16svt/prime_end.wav"
+
+PrimerDuration = randint(15,30)
+
+SoundDurations = table()
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/1-2a.wav",number] = 820
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/1-2b.wav",number] = 3340
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/2-3a.wav",number] = 1210
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/2-3b.wav",number] = 4970
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/3-4a.wav",number] = 1220
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/3-4b.wav",number] = 2770
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/4-5a.wav",number] = 1300
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/4-5b.wav",number] = 4770
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/5-6a.wav",number] = 1340
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/5-6b.wav",number] = 3720
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/6-7a.wav",number] = 1570
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/6-7b.wav",number] = 11660
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/7-8a.wav",number] = 970
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/up/7-8b.wav",number] = 5530
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/2-1a.wav",number] = 1040
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/2-1b.wav",number] = 11720
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/3-2a.wav",number] = 750
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/3-2b.wav",number] = 6740
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/4-3a.wav",number] = 850
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/4-3b.wav",number] = 7660
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/5-4a.wav",number] = 490
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/5-4b.wav",number] = 3980
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/6-5a.wav",number] = 490
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/6-5b.wav",number] = 2240
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/7-6a.wav",number] = 270
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/7-6b.wav",number] = 2040
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/8-7a.wav",number] = 260
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/transitions/down/8-7b.wav",number] = 550
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/startup_ac.wav",number] = 23710
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/startup_dc.wav",number] = 25760
+SoundDurations["wam98_sounds/trains/engines/ee16csvt/shutdown.wav",number] = 19760

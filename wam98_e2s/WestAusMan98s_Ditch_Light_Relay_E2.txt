@@ -1,10 +1,10 @@
 @name WestAusMan98's Ditch Light Relay E2
-@inputs On Horn
-@outputs Port Starboard RGB:vector
-@persist OnPeriod FlashDuration TickVolume Oscillate CanStart
+@inputs OnFront OnRear Horn
+@outputs PortFront StarboardFront PortRear StarboardRear RGB:vector
+@persist OnPeriod FlashDuration OscillateFront OscillateRear CanStartFront CanStartRear
 
 if(first()|duped()){
-    #V1
+    #V2
     
     #Setup Instructions
     #1: Configure the E2 to your preference.
@@ -18,84 +18,151 @@ if(first()|duped()){
     #9: Done!
         
     #Config
-    OnPeriod = 0.5 #How long one light will remain on before switching to the other. Around half a second (0.5) is the norm, Wisconsin Central and KiwiRail would have 0.3 and MetroLink use 1.
+    OnPeriod = 0.5 #How long one light will remain on before switching to the other. Around half a second (0.5) is the norm, Wisconin Central and KiwiRail would have 0.3 and MetroLink use 1.
     FlashDuration = 30 #How long until the ditch lights stop oscillating. 30 seconds is the golden standard.
-    RGB = vec(255,255,200) #Color of the lights.
-    TickVolume = 1
-}
-if(!Oscillate){
-    stoptimer("flash_init")
-    stoptimer("flash_left")
-    stoptimer("flash_right")
+    RGB = vec(255,255,192) #Color of the lights.
 }
 
-if(On && !Oscillate){
-    Port = 1
-    Starboard = 1
-    CanStart = 1
+#Front
+if(!OscillateFront){
+    stoptimer("flash_init_front")
+    stoptimer("flash_left_front")
+    stoptimer("flash_right_front")
 }
 
-if(Horn & ~Horn && CanStart == 1){
-    Oscillate = 1
+if(OnFront && !OscillateFront){
+    PortFront = 1
+    StarboardFront = 1
+    CanStartFront = 1
 }
 
-if(Oscillate && CanStart == 1){
-    timer("flash_init",OnPeriod*1000)
-    timer("on",FlashDuration*1000)
-    CanStart = 0
-    if(On){
-        Port = 1
-        Starboard = 0
+if(Horn & ~Horn && CanStartFront == 1){
+    OscillateFront = 1
+}
+
+if(OscillateFront && CanStartFront == 1){
+    timer("flash_init_front",OnPeriod*1000)
+    timer("on_front",FlashDuration*1000)
+    CanStartFront = 0
+    if(OnFront){
+        PortFront = 1
+        StarboardFront = 0
     }
 }
 
-if(Horn & ~Horn && CanStart == 0){
-    stoptimer("on")
-    timer("on",FlashDuration*1000)
+if(Horn & ~Horn && CanStartFront == 0){
+    stoptimer("on_front")
+    timer("on_front",FlashDuration*1000)
 }
 
-if(clk("flash_init")){
-    Port = 0
-    Starboard = 1
-    soundPlay(1,1,"gsgtrainsounds/misc/switch1.wav")
-    soundVolume(1,TickVolume)
-    timer("flash_right",OnPeriod*1000)
+if(clk("flash_init_front")){
+    PortFront = 0
+    StarboardFront = 1
+    timer("flash_right_front",OnPeriod*1000)
 }
 
-if(clk("flash_right")){
-    Port = 1
-    Starboard = 0
-    soundPlay(1,1,"gsgtrainsounds/misc/switch2.wav")
-    soundVolume(1,TickVolume)
-    timer("flash_left",OnPeriod*1000)
+if(clk("flash_right_front")){
+    PortFront = 1
+    StarboardFront = 0
+    timer("flash_left_front",OnPeriod*1000)
 }
 
-if(clk("flash_left")){
-    Port = 0
-    Starboard = 1
-    soundPlay(1,1,"gsgtrainsounds/misc/switch1.wav")
-    soundVolume(1,TickVolume)
-    timer("flash_right",OnPeriod*1000)
+if(clk("flash_left_front")){
+    PortFront = 0
+    StarboardFront = 1
+    timer("flash_right_front",OnPeriod*1000)
 }
 
-if(clk("on")){
-    if(On){
-        Port = 1
-        Starboard = 1
+if(clk("on_front")){
+    if(OnFront){
+        PortFront = 1
+        StarboardFront = 1
     }
-    stoptimer("flash_init")
-    stoptimer("flash_left")
-    stoptimer("flash_right")
-    Oscillate = 0
-    CanStart = 1
+    stoptimer("flash_init_front")
+    stoptimer("flash_left_front")
+    stoptimer("flash_right_front")
+    OscillateFront = 0
+    CanStartFront = 1
 }
 
-if(!On){
-    stoptimer("flash_init")
-    stoptimer("flash_left")
-    stoptimer("flash_right")
-    Oscillate = 0
-    Port = 0
-    Starboard = 0
-    CanStart = 0
+if(!OnFront){
+    stoptimer("flash_init_front")
+    stoptimer("flash_left_front")
+    stoptimer("flash_right_front")
+    OscillateFront = 0
+    PortFront = 0
+    StarboardFront = 0
+    CanStartFront = 0
+}
+
+if(!OscillateRear){
+    stoptimer("flash_init_rear")
+    stoptimer("flash_left_rear")
+    stoptimer("flash_right_rear")
+}
+
+#Rear
+if(OnRear && !OscillateRear){
+    PortRear = 1
+    StarboardRear = 1
+    CanStartRear = 1
+}
+
+if(Horn & ~Horn && CanStartRear == 1){
+    OscillateRear = 1
+}
+
+if(OscillateRear && CanStartRear == 1){
+    timer("flash_init_rear",OnPeriod*1000)
+    timer("on_rear",FlashDuration*1000)
+    CanStartRear = 0
+    if(OnRear){
+        PortRear = 1
+        StarboardRear = 0
+    }
+}
+
+if(Horn & ~Horn && CanStartRear == 0){
+    stoptimer("on_rear")
+    timer("on_rear",FlashDuration*1000)
+}
+
+if(clk("flash_init_rear")){
+    PortRear = 0
+    StarboardRear = 1
+    timer("flash_right_rear",OnPeriod*1000)
+}
+
+if(clk("flash_right_rear")){
+    PortRear = 1
+    StarboardRear = 0
+    timer("flash_left_rear",OnPeriod*1000)
+}
+
+if(clk("flash_left_rear")){
+    PortRear = 0
+    StarboardRear = 1
+    timer("flash_right_rear",OnPeriod*1000)
+}
+
+if(clk("on_rear")){
+    if(OnRear){
+        PortRear = 1
+        StarboardRear = 1
+    }
+    stoptimer("flash_init_rear")
+    stoptimer("flash_left_rear")
+    stoptimer("flash_right_rear")
+    OscillateRear = 0
+    CanStartRear = 1
+}
+
+if(!OnRear){
+    stoptimer("flash_init_rear")
+    stoptimer("flash_left_rear")
+    stoptimer("flash_right_rear")
+    OscillateRear = 0
+    PortRear = 0
+    StarboardRear = 0
+    CanStartRear = 0
 }

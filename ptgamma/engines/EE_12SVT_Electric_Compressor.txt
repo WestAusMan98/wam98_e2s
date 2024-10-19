@@ -1,0 +1,117 @@
+@name ptgamma/engines/EE_12SVT_Electric_Compressor
+#ENGINE CONFIG
+ENG_Version = "2.0.68"
+#Turbocharged V-twelve English Electric V type engine based on the RK series platform, used in early mainline locomotives (BR Class 31, KTM Class 20, NZR DF Class, QR 1200, 1225, 1250 and 1270 Classes, WAGR C Class).
+EngineType = "EE 12SVT" #What is the name of the Prime Mover?
+
+Startup_Hi = "wam98_sounds/trains/engines/ee12svt/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "wam98_sounds/trains/engines/ee12svt/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "wam98_sounds/trains/engines/ee12svt/idle.wav", #Idle
+    "wam98_sounds/trains/engines/ee12svt/notch1.wav", #Notch 1
+    "wam98_sounds/trains/engines/ee12svt/notch2.wav", #Notch 2
+    "wam98_sounds/trains/engines/ee12svt/notch3.wav", #Notch 3
+    "wam98_sounds/trains/engines/ee12svt/notch4.wav", #And so On
+    "wam98_sounds/trains/engines/ee12svt/notch5.wav",
+    "wam98_sounds/trains/engines/ee12svt/notch6.wav",
+    "wam98_sounds/trains/engines/ee12svt/notch7.wav",
+    "wam98_sounds/trains/engines/ee12svt/notch7.wav"
+)
+
+TransitionPath = "wam98_sounds/trains/engines/ee12svt/transitions/"
+#----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(0,  0,  0,  0,  0,  0,  0,  3  )
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1 1-2 2-3 3-4 4-5 5-6  6-7   7-8 
+UpDelays = array(532,235,330,536,576,2022,11464,0  )
+                  #8-7 7-6 6-5  5-4 4-3  3-2  2-1  1-0
+DownDelays = array(0,  563,3110,939,1583,4567,1409,2182)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 5 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 1.5 #Duration for starter smoke
+
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "wam98_sounds/trains/compressors/br_class31_compressor_loop.wav"
+CompressorOff = "wam98_sounds/trains/compressors/br_class31_compressor_end.wav"
+
+DynamicsOn = "gsgtrainsounds/misc/ge_5gya30_radiator_fan_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/ge_5gya30_radiator_fan_end.wav"
+
+PrimeOn = "wam98_sounds/trains/engines/c-bfvbl12t/prime_loop.wav"
+PrimeOff = "wam98_sounds/trains/engines/c-bfvbl12t/prime_end.wav"
+
+PrimerDuration = randint(15,30)
+
+SoundDurations = table()
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/0-1a.wav",number] = 270
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/0-1b.wav",number] = 1560
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/1-2a.wav",number] = 290
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/1-2b.wav",number] = 1040
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/2-3a.wav",number] = 270
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/2-3b.wav",number] = 2760
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/3-4a.wav",number] = 430
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/3-4b.wav",number] = 2440
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/4-5a.wav",number] = 530
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/4-5b.wav",number] = 2200
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/5-6a.wav",number] = 540
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/5-6b.wav",number] = 2370
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/6-7a.wav",number] = 530
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/up/6-7b.wav",number] = 11460
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/1-0a.wav",number] = 510
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/1-0b.wav",number] = 2180
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/2-1a.wav",number] = 550
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/2-1b.wav",number] = 1740
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/3-2a.wav",number] = 1000
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/3-2b.wav",number] = 4940
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/4-3a.wav",number] = 640
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/4-3b.wav",number] = 2280
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/5-4a.wav",number] = 720
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/5-4b.wav",number] = 1630
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/6-5a.wav",number] = 280
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/6-5b.wav",number] = 3800
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/7-6a.wav",number] = 420
+SoundDurations["wam98_sounds/trains/engines/ee12svt/transitions/down/7-6b.wav",number] = 640
+SoundDurations["wam98_sounds/trains/engines/ee12svt/startup.wav",number] = 12830
+SoundDurations["wam98_sounds/trains/engines/ee12svt/shutdown.wav",number] = 15480

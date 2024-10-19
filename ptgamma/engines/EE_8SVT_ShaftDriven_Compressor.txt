@@ -1,7 +1,7 @@
 @name ptgamma/engines/EE_8SVT_ShaftDriven_Compressor
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
-#Turbocharged V-eight English Electric V type engine based on the RK series platform, used in heavy shunting locomotives as well as light duty freight/branchline locomotives (BR Class 20, MRWA G Class). Also acceptable as an 8SRKT (AI&S D1/D16 Classes) or 8CSVT substitute (CP Série 1400, KTM Class 22).
+#Turbocharged V-eight English Electric V type engine based on the RK series platform, used in heavy shunting locomotives as well as light duty freight/branchline locomotives (BR Class 20, MRWA G Class). Also acceptable as an 8SRKT (AI&S D1/D16 Classes) substitute.
 EngineType = "EE 8SVT" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/ee8svt/startup_dc.wav" #Startup Sound to put the engine in High (Normal) Idle.
@@ -25,7 +25,7 @@ Notches = array(
     "wam98_sounds/trains/engines/ee8svt/idle.wav", #Idle
     "wam98_sounds/trains/engines/ee8svt/notch1.wav", #Notch 1
     "wam98_sounds/trains/engines/ee8svt/notch2.wav", #Notch 2
-    "wam98_sounds/trains/engines/ee8svt/notch2.wav", #Notch 3
+    "wam98_sounds/trains/engines/ee8svt/notch3.wav", #Notch 3
     "wam98_sounds/trains/engines/ee8svt/notch4.wav", #And so On
     "wam98_sounds/trains/engines/ee8svt/notch5.wav",
     "wam98_sounds/trains/engines/ee8svt/notch6.wav",

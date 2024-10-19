@@ -1,7 +1,7 @@
 @name ptgamma/engines/MTU_20V4000R04
 #ENGINE CONFIG
 ENG_Version = "2.0.67"
-#For use in the fictitious CRRC NJM1.
+#For use in the fictional CRRC NJM1.
 EngineType = "MTU 20V4000R04" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/mtu4000r41v16/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.

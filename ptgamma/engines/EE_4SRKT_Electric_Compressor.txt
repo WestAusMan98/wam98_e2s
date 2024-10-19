@@ -1,7 +1,7 @@
 @name ptgamma/engines/EE_4SRKT_Electric_Compressor
 #ENGINE CONFIG
 ENG_Version = "2.0.68"
-#Turbocharged straight-four English Electric RK series engine, used in a variety of rail applications (BR Class 73, "Thumper" DEMUs, SAR 500 Class).
+#Turbocharged straight-four English Electric RK type engine, used in a variety of rail applications (BR Class 73, "Thumper" DEMUs, SAR 500 Class).
 EngineType = "EE 4SRKT" #What is the name of the Prime Mover?
 
 Startup_Hi = "wam98_sounds/trains/engines/ee4srkt/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
@@ -42,7 +42,7 @@ EngineBehavior = array(0,  0,  0,  0,  0,  0,  0,  0  )
 #3 - No Change
 #4 - Override (Full Sweep)
                 #0-1 1-2 2-3 3-4 4-5  5-6  6-7  7-8 
-UpDelays = array(264,243,268,866,1137,6989,5978,2663)
+UpDelays = array(272,243,268,866,1137,6989,5978,2663)
                   #8-7 7-6  6-5  5-4  4-3  3-2 2-1  1-0
 DownDelays = array(155,1078,1350,1173,2931,803,1593,1770)
 
@@ -68,8 +68,8 @@ DownOverrides = array(
     ""  #1-0
 )
 
-StartupClagDelay = 3 #Time required to hold starter for engine to turn on successfully
-StartupClagDuration = 1 #Duration for starter smoke
+StartupClagDelay = 1.5 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 0.75 #Duration for starter smoke
 
 CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
 
@@ -85,12 +85,12 @@ PrimeOff = "wam98_sounds/trains/engines/ee4srkt/prime_end.wav"
 PrimerDuration = randint(15,30)
 
 SoundDurations = table()
-SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/0-1a.wav",number] = 0
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/0-1a.wav",number] = 530
 SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/0-1b.wav",number] = 3760
-SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/1-2a.wav",number] = 270
-SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/1-2b.wav",number] = 1520
-SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/2-3a.wav",number] = 290
-SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/2-3b.wav",number] = 1320
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/1-2a.wav",number] = 520
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/1-2b.wav",number] = 1800
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/2-3a.wav",number] = 580
+SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/2-3b.wav",number] = 1610
 SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/3-4a.wav",number] = 1170
 SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/3-4b.wav",number] = 5800
 SoundDurations["wam98_sounds/trains/engines/ee4srkt/transitions/up/4-5a.wav",number] = 610
