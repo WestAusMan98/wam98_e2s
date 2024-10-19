@@ -1,0 +1,122 @@
+@name ptgamma/engines/MTU_20V4000R04
+#ENGINE CONFIG
+ENG_Version = "2.0.67"
+#For use in the fictional CRRC NJM1.
+EngineType = "MTU 20V4000R04" #What is the name of the Prime Mover?
+
+Startup_Hi = "wam98_sounds/trains/engines/mtu4000r41v16/startup_auto.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "wam98_sounds/trains/engines/mtu4000r41v16/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "wam98_sounds/trains/engines/mtu4000r41v16/idle.wav", #Idle
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch1.wav", #Notch 1
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch2.wav", #Notch 2
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch3.wav", #Notch 3
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch4.wav", #And so On
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch5.wav",
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch6.wav",
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch7.wav",
+    "wam98_sounds/trains/engines/mtu4000r41v16/notch8.wav"
+)
+
+TransitionPath = "wam98_sounds/trains/engines/mtu4000r41v16/transitions/"
+#----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(1,  0,  0,  0,  0,  0,  0,  0)
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1  1-2  2-3  3-4  4-5  5-6  6-7  7-8 
+UpDelays = array(0,   5165,2609,2742,3825,4045,3739,4752)
+                  #8-7  7-6  6-5  5-4  4-3  3-2  2-1
+DownDelays = array(1324,2179,1679,1812,1730,3585,3838)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 17 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 1 #Duration for starter smoke
+
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "kei/trains/compressors/siemens_charger_compressor_1_loop.wav"
+CompressorOff = "kei/trains/compressors/siemens_charger_compressor_1_end.wav"
+
+DynamicsOn = "kei/trains/misc/jnr_mh110a-fk77_mainblower_loop.wav"
+DynamicsOff = "kei/trains/misc/jnr_mh110a-fk77_mainblower_end.wav"
+
+PrimeOn = ""
+PrimeOff = ""
+
+PrimerDuration = 0
+
+SoundDurations = table()
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/0-1.wav",number] = 1420
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/1-2a.wav",number] = 400
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/1-2b.wav",number] = 5980
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/2-3a.wav",number] = 900
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/2-3b.wav",number] = 4830
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/3-4a.wav",number] = 110
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/3-4b.wav",number] = 4430
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/4-5a.wav",number] = 1130
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/4-5b.wav",number] = 5300
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/5-6a.wav",number] = 510
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/5-6b.wav",number] = 5370
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/6-7a.wav",number] = 590
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/6-7b.wav",number] = 4420
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/7-8a.wav",number] = 390
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/up/7-8b.wav",number] = 6440
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/1-0.wav",number] = 1470
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/2-1a.wav",number] = 710
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/2-1b.wav",number] = 5560
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/3-2a.wav",number] = 640
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/3-2b.wav",number] = 4670
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/4-3a.wav",number] = 750
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/4-3b.wav",number] = 2740
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/5-4a.wav",number] = 610
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/5-4b.wav",number] = 2840
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/6-5a.wav",number] = 690
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/6-5b.wav",number] = 2690
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/7-6a.wav",number] = 910
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/7-6b.wav",number] = 3140
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/8-7a.wav",number] = 520
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/transitions/down/8-7b.wav",number] = 2310
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/startup.wav",number] = 6440
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/startup_air.wav",number] = 6550
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/startup_auto.wav",number] = 21290
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/startup_air_auto.wav",number] = 6440
+SoundDurations["wam98_sounds/trains/engines/mtu4000r41v16/shutdown.wav",number] = 11020
